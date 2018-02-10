@@ -1,19 +1,54 @@
-\section{A Review of Linear and Abstract Algebra}
+\section{A Review of Abstract and Linear Algebra}
 
 \subsection{Our goal: What is a representation?}
 By the end of this review, we want to have enough pieces in place to understand
-the definition of a \textit{representation}.
+the definition of a representation.
 
 \begin{defn}
-Let $G$ be a group. A \textit{representation} (see 3.1.1 in \cite{steinberg})
-of $G$ is a homomorphism $\varphi : G \to GL(V)$ for some finite-dimensional
-vector space $V$.
+  Let $G$ be a group. A \textit{representation} (see 3.1.1 in \cite{steinberg})
+  of $G$ is a homomorphism $\varphi : G \to GL(V)$ for some finite-dimensional
+  vector space $V$.
 \end{defn}
 
 To understand this definition, we need to understand the following terms:
 \textit{group, homomorphism,} (finite-dimensional) \textit{vector space}. We
 also need to understand how $GL(V)$ is a group.
 
+% TODO: How much should we assume the reader knows? For now...
+We assume a basic familiarity with the definition of \textit{group} and
+\textit{homomorphism}.
+
 \subsection{Vector Spaces}
 
-...
+We begin with the definition of a vector space over a field.
+
+\begin{defn}
+  Let $F$ be a field. A \textit{vector space} over $F$, then, is a set $V$ with
+  two operations:
+  \begin{align*}
+    &+ : V \times V \to V && \text{(vector addition)}\\
+    &\cdot : F \times V \to V && \text{(scalar multiplication)}
+  \end{align*}
+  such that vector addition forms an abelian group and the following equalities
+  hold for $a, b \in F$ and $\textbf{u, v} \in V$:
+  \begin{align*}
+    &a(\textbf{v}+\textbf{u}) = a\textbf{v} + a\textbf{u} &&
+    \text{(distributivity of scalar multplication over vector addition)}\\
+    &(a+b)\textbf{v} = a\textbf{v} + b\textbf{v} && \text{(distributivity of
+      scalar multplication over field addition)}\\
+    &a(b\textbf{v}) = (ab)\textbf{v} && \text{(compatibility of field
+      multplication and scalar multplication\footnotemark)}\\
+    &1\textbf{v} = \textbf{v} && \text{(identity of scalar multiplication, where
+      $1 \in F$)}
+  \end{align*}
+  \footnotetext{This does not assert the associativity of either operation.}
+\end{defn}
+
+\begin{note}
+  In some texts, the term ``module'' is used. A \textit{module} over a ring is a
+  generalization of a vector space over a field. That is, it allows $F$ in our
+  definition above to be any ring, not specifically a field.
+
+  Thus, if $K$ is a field, the following terms are equivalent: $K$-module,
+  $K$-vector space, module over $K$, vector space over $K$.
+\end{note}
