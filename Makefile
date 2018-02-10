@@ -6,3 +6,6 @@ open:
 
 clean:
 	rm -rf out
+
+upload: latex
+	scp out/master.pdf vps:/srv/webmount/tmp/CCRT.pdf
