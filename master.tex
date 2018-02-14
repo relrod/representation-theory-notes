@@ -2,6 +2,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
 \usepackage[table]{xcolor}
+\usepackage{etoolbox}
+\usepackage{needspace}
 \usepackage[margin=3cm]{geometry}
 \geometry{margin=1in, headsep=0.25in}
 
@@ -25,6 +27,15 @@
 \newtheorem{reg}{Rule}
 \newtheorem{exer}{Exercise}
 \newtheorem{note}{Note}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}
+\AtBeginEnvironment{thm}{\Needspace{5\baselineskip}}
+\newtheorem{cly}{Corollary}
+\AtBeginEnvironment{cly}{\Needspace{5\baselineskip}}
+\AtBeginEnvironment{proof}{\Needspace{5\baselineskip}}
+
+\newcommand\nb[1]{\textcolor{red}{(#1)}}
 
 \begin{document}
 \title{Categorical Connections to Representation Theory}

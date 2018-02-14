@@ -52,3 +52,44 @@ We begin with the definition of a vector space over a field.
   Thus, if $K$ is a field, the following terms are equivalent: $K$-module,
   $K$-vector space, module over $K$, vector space over $K$.
 \end{note}
+
+\subsection{About $GL(V)$}
+
+\begin{defn}
+  Let $V$ be a vector space over a field. Then $GL(V)$ is the set of all
+  automorphisms of $V$.
+
+  Notationally,
+  $GL(V) = \{ f : V \to V\ |\ f\ \text{is a bijective linear transformation}\}$.
+\end{defn}
+
+It happens that $GL(V)$ forms a group. We prove a more general statement first,
+then use it to show that $GL(V)$ is a group.
+
+\begin{thm}
+  \label{automorphismgroup}
+  Let $C$ be a category. Given an object $x$ of $C$, the set of automorphisms
+  from $x \to x$ form a group under composition.
+  \nb{What if the collection of automorphisms isn't a set?}
+\end{thm}
+
+\begin{proof}
+  The composition of two automorphisms is another automorphism,
+  since the composition of two isomorphisms is an isomorphism. Further, it is
+  part of the definition of a category (See section \nb{fill in later}) that the
+  composition of morphisms is associative. The identity is the identity
+  morphism, which goes from $x$ to itself. Lastly, every isomorphism has a
+  two-sided inverse, which is also an isomorphism. The inverse again goes from
+  $x \to x$ so it is an automorphism.
+\end{proof}
+
+\begin{cly}
+  Let $V$ be a vector space over a field $F$. Then $GL(V)$ is a group under
+  composition of functions.
+\end{cly}
+
+\begin{proof}
+  Note that $V$ is an object of a category, namely \textbf{Vect$_k$} and that
+  $GL(V)$ is the set of all automorphisms of $V$. Thus by
+  theorem \ref{automorphismgroup}, $GL(V)$ is a group.
+\end{proof}
